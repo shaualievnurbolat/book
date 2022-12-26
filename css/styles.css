@@ -1,0 +1,307 @@
+@font-face {
+  font-family: "Montserrat";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../font/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../font/Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: normal;
+  font-style: italic;
+  src: url("../font/Montserrat-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-style: italic;
+  src: url("../font/Montserrat-BoldItalic.ttf");
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0064cc;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Montserrat";
+}
+
+.tingle-modal {
+  user-select: text !important;
+}
+
+/* Title page*/
+
+.title-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.title-col1 {
+  height: 100%;
+  background-color: yellow;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  border-right: 5px solid white;
+}
+
+.title-col2 {
+  height: 100%;
+  background-color: green;
+  background-size: 100% 100%;
+}
+
+#logo {
+  position: absolute;
+  top: 1rem;
+  right: 1vw;
+}
+
+#logo img {
+  width: auto;
+  height: 3rem;
+}
+
+.btn-home {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  top: 1vh;
+  left: 1vh;
+  background-image: url("../img/btnHome.png");
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.btn-home .list-group-item:hover {
+  opacity: 0.8;
+}
+
+#title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3vw;
+  text-align: right;
+  width: 70%;
+  color: white;
+  font-weight: bold;
+}
+
+#title #caption {
+  font-size: 6vh;
+  text-transform: uppercase;
+}
+
+#title #more {
+  font-weight: bold;
+  font-size: 2vh;
+}
+
+#place {
+  position: absolute;
+  bottom: 1vh;
+  right: 3vw;
+  color: white;
+}
+
+.delimeter-solid {
+  border-top: 0.8vh solid white;
+}
+
+.title-menu {
+  position: absolute;
+  width: 50%;
+  bottom: 10vh;
+  right: 8vw;
+  font-weight: bold;
+  text-align: center;
+  border: solid 1px white;
+  background-color: white;
+
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  gap: 1px;
+  align-items: stretch;
+}
+
+.title-menu a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 3vh;
+}
+
+.title-menu-item-simple {
+  background-color: #32d3f0;
+  color: white;
+  padding: 0.5rem;
+}
+
+.title-menu-item-highlight {
+  background-color: #32d3f0;
+  color: white;
+  padding: 0.5rem;
+  background-color: #0064cc;
+}
+
+.content-menu {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1vw;
+  font-weight: bold;
+  text-align: center;
+
+  border: solid 1px white;
+  background-color: white;
+
+  display: flex;
+  gap: 1px;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.content-menu a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.content {
+  position: absolute;
+  left: 3vh;
+  top: 3vh;
+  cursor: pointer;
+}
+
+.content-item {
+  border: solid 1px white;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1vh;
+  margin: 1vh;
+}
+
+.content-item a {
+  text-decoration: none;
+  color: black;
+  font-size: 2vh;
+  margin: 0 1rem;
+}
+
+.panel {
+  position: absolute;
+  width: 98vw;
+  top: 5rem;
+  left: 1vw;
+  bottom: 3.7rem;
+  padding: 1rem;
+  background-color: white;
+}
+
+.panel .list-group-item {
+  padding: 0.5rem;
+}
+
+.panel .list-group-item:hover {
+  color: white;
+  background-color: #32d3f0;
+}
+
+.panel .list-group-item-action {
+  border-radius: 0;
+  color: black;
+}
+
+.panel a {
+  text-decoration: none;
+}
+
+.scroll-panel {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.lection-content {
+  text-align: justify;
+  text-indent: 2rem;
+  padding-right: 1rem;
+}
+
+.lection-content p {
+  margin-bottom: 0;
+}
+
+.picture {
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: unset;
+  align-items: center;
+  margin: 2rem auto;
+  text-align: center;
+  font-size: 0.9em;
+  text-indent: 0;
+}
+
+.test-variant {
+  margin-bottom: 1rem;
+}
+
+.test-variant button {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+}
+
+.navbar {
+  padding-top: 2.3rem;
+  background: rgba(255, 255, 255, 0);
+}
+
+#authors .caption {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#authors hr {
+  border-top: 3px solid gray;
+}
+
+#authors img {
+  height: 10vh;
+}
+
+#authors .status {
+  font-size: 2.5vh;
+  color: red;
+}
+
+#authors .name {
+  font-size: 3vh;
+  color: darkblue;
+}

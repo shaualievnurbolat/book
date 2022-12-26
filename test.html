@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from textbook.tou.edu.kz/books/125/test.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Dec 2022 09:56:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1, maximum-scale=1, width=device-width" />
+    <title>Ақпараттық оқыту технологиясы арқылы қазақ тілін меңгерту</title>
+    <!-- <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" /> -->
+    <link href="favicon.png" rel="shortcut icon" type="image/png" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/tingle.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid title-container">
+      <div class="row h-100">
+        <div class="col-4 title-col1"></div>
+        <div class="col-8 title-col2"></div>
+
+        <div class="content-menu">
+          <div id="a-authors" class="col title-menu-item-simple"><a href="#">Авторлар</a></div>
+          <div id="a-literature" class="col title-menu-item-simple"><a href="#">Әдебиет</a></div>
+          <div id="a-glossary" class="col title-menu-item-simple"><a href="#">Глоссарий</a></div>
+        </div>
+
+        <a class="btn-home" href="content.html"></a>
+        <div class="panel">
+          <div class="scroll-panel">
+            <div id="test" class="mr-3">
+              <div v-if="testLoaded">
+                <h3 class="text-center title">Тест</h3>
+                <div class="progress" style="margin-top: 1rem; height: 20px">
+                  <div class="progress-bar bg-success" :style="{width:barRightWidth+'%'}">{{rightAnswers}}</div>
+                  <div class="progress-bar bg-danger" :style="{width:barWrongWidth+'%'}">{{wrongAnswers}}</div>
+                  <div class="progress-bar" :style="{width:(100-(barRightWidth + barWrongWidth))+'%'}">{{TOTAL_QUESTIONS_NUMBER-(rightAnswers+wrongAnswers)}}</div>
+                </div>
+                <br />
+                <div v-if="!finished">
+                  Сұрақ №{{currentQuestionNumber}}:
+                  <br />
+                  <div id="question">{{question}}</div>
+                  <br />
+                  <div class="row">
+                    <div class="col" v-for="answerCol of answerButtonsColumns">
+                      <div class="test-variant" v-for="answer of answerCol">
+                        <!-- Несколько ответов -->
+                        <div v-if="hasMultipleAnswers()" class="btn-group-toggle" data-toggle="buttons">
+                          <label class="btn btn-outline-primary btn-lg" :key="answer.key"> <input type="checkbox" :id="answer.key" :value="answer.key" v-model="checkedAnswers" /> {{ answer.key }} </label>
+                          {{ answer.text }}
+                        </div>
+
+                        <!-- Один ответ -->
+                        <div v-else>
+                          <button type="button" class="btn btn-outline-primary btn-lg" :key="answer.key" @click="checkAnswer(answer.text)">{{ answer.key }}</button>
+                          {{ answer.text }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div v-if="hasMultipleAnswers()">
+                    <p>(Сұраққа бiрнеше жауап нұсқасы келеді)</p>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" @click="checkAnswer();">Келесі</button>
+                  </div>
+                </div>
+                <div v-else>
+                  <div class="text-center">
+                    <h4>Дұрыс жауаптар: {{rightAnswers}}</h4>
+                    <h4>Дұрыс емес жауаптар: {{wrongAnswers}}</h4>
+                    <br />
+                    <h1>Нәтиже:</h1>
+                    <div style="font-size: 80pt">{{testResult}}</div>
+                    <button type="button" class="btn btn-outline-primary btn-lg" @click="testReset();">Қайталау</button>
+                  </div>
+                </div>
+              </div>
+              <div v-else>{{status}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/tingle.js"></script>
+    <script src="js/add_popups.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/test.js"></script>
+  </body>
+
+<!-- Mirrored from textbook.tou.edu.kz/books/125/test.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Dec 2022 09:56:25 GMT -->
+</html>
